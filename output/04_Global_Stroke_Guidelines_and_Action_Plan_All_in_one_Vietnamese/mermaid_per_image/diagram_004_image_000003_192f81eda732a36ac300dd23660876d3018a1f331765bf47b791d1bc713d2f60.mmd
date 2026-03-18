@@ -1,0 +1,46 @@
+```mermaid
+flowchart TD
+    Start([KHỞI PHÁT ĐỘT QUỴ<br/>VÀ GIỚI THIỆU CÁC<br/>DỊCH VỤ CHĂM SÓC<br/>SỨC KHỎE]) --> Fast[("NHẬN BIẾT NHANH CÁC TRIỆU CHỨNG ĐỘT QUỴ<br/>'FAST' FACE, ARM, SPEECH, TIME<br/>MẶT, CÁNH TAY, LỜI NÓI, THỜI GIAN")]
+    
+    Fast --> CT_Check{CHỤP CẮT LỚP CT<br/>CÓ SẴN TẠI CHỖ?}
+    
+    CT_Check -- CÓ --> YesNode((CÓ))
+    YesNode --> CT_Scan[CHỤP CT NGAY]
+    
+    CT_Check -- KHÔNG --> NoNode((KHÔNG))
+    NoNode --> Transfer_Check{KHẢ NĂNG CHUYỂN ĐẾN<br/>MỘT CƠ SỞ CHĂM SÓC SỨC<br/>KHỎE CÓ CHỤP CT}
+    
+    Transfer_Check -->|Có thể chuyển| CT_Scan
+    Transfer_Check -- KHÔNG --> NoTransfer((KHÔNG))
+    NoTransfer --> Eval_Initial[Đánh Giá Y Khoa và Chăm Sóc<br/>Siêu Cấp Tính Ban Đầu]
+    
+    CT_Scan --> Eval_Urgent[Đánh Giá Y Khoa & Quản Lý<br/>Đột Quỵ Siêu Cấp<br/>Tính Ban Đầu]
+    
+    Eval_Urgent & Eval_Initial --> Phase1
+    
+    subgraph CareContinuum [QUY TRÌNH CHĂM SÓC]
+        direction TB
+        Phase1[("CHĂM SÓC TRƯỚC KHI ĐẾN BỆNH VIỆN<br/>VÀ TẠI PHÒNG CẤP CỨU<br/>- Hình Ảnh Học Thần Kinh<br/>- Phòng Thí Nghiệm Chẩn Đoán<br/>- Liệu Pháp Làm Tan Huyết Khối...")]
+        Phase2[("CHĂM SÓC<br/>NỘI TRÚ CẤP TÍNH<br/>- Đơn Vị Chăm Sóc Bệnh Nhân Đột Quỵ<br/>- Đánh Giá Khả Năng Cử Động...")]
+        Phase3[("PHÒNG NGỪA<br/>ĐỘT QUỴ TÁI PHÁT<br/>- Kiểm Soát Huyết Áp<br/>- Chống Huyết Khối...")]
+        Phase4[("PHỤC HỒI CHỨC<br/>NĂNG CHO BỆNH<br/>NHÂN ĐỘT QUỴ<br/>- Khả Năng Cử Động<br/>- Chống Nhộn Thức...")]
+        Phase5[("TÁI HÒA NHẬP<br/>CỘNG ĐỒNG VÀ<br/>PHỤC HỒI<br/>- Kiểm Soát Sự Biến Đổi<br/>- Điều Chỉnh Cuộc Sống...")]
+    end
+
+    Phase1 --> Phase2 --> Phase3 --> Phase4 --> Phase5
+
+    SideLeft((Giáo Dục và<br/>Hỗ Trợ Bệnh<br/>Nhân và Gia<br/>Đình)) -.-> CareContinuum
+    SideRight((Sử Dụng Công<br/>Nghệ cơ bản<br/>nhất đến<br/>phức tạp)) -.-> CareContinuum
+
+    style Start fill:#f0f8ff,stroke:#333,stroke-width:0px
+    style Fast fill:#4b6cb7,stroke:#333,color:#fff
+    style CT_Check fill:#a695d6,stroke:#333,color:#fff
+    style Phase1 fill:#ff6b6b,stroke:#333,color:#fff
+    style Phase2 fill:#9b59b6,stroke:#333,color:#fff
+    style Phase3 fill:#2ecc71,stroke:#333,color:#fff
+    style Phase4 fill:#f39c12,stroke:#333,color:#fff
+    style Phase5 fill:#3498db,stroke:#333,color:#fff
+    style YesNode fill:#95a5a6,color:#fff
+    style NoNode fill:#95a5a6,color:#fff
+    style NoTransfer fill:#95a5a6,color:#fff
+```
