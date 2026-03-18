@@ -1,0 +1,229 @@
+---
+title: Mermaid diagrams from 04_Global_Stroke_Guidelines_and_Action_Plan_All_in_one_Vietnamese
+---
+
+### Diagram 2 — image_000001_f3777974f70a9c2be1b75044f9d314b12912abb873b27aa2a052757958e63ee3.png
+
+```mermaid
+flowchart LR
+    subgraph Step1 [" "]
+        direction TB
+        Title1["<b>CÁC CẤU TRÚC CẦN THIẾT</b>"]
+        List1["CÁC YẾU TỐ HỆ THỐNG<br/>KHẢ NĂNG TIẾP CẬN CÁC DỊCH VỤ<br/>CHĂM SÓC BỆNH NHÂN ĐẠT QUY<br/>NGUỒN NHÂN LỰC<br/>THIẾT BỊ<br/>TÀI TRỢ"]
+    end
+
+    subgraph Step2 [" "]
+        direction TB
+        Title2["<b>VIỆC CẦN LÀM</b>"]
+        List2["HƯỚNG DẪN<br/>THỰC HIỆN PHÁC ĐỒ<br/>TÀI LIỆU GIÁO DỤC"]
+    end
+
+    subgraph Step3 [" "]
+        direction TB
+        Title3["<b>MỌI VIỆC ĐANG ĐƯỢC<br/>THỰC HIỆN TỐT NHƯ THẾ NÀO</b>"]
+        List3["CÁC CHỈ SỐ CHẤT LƯỢNG CHÍNH<br/>THU THẬP DỮ LIỆU<br/>PHÂN TÍCH DỮ LIỆU<br/>DIỄN GIẢI PHÁT HIỆN<br/>BÁO CÁO"]
+    end
+
+    subgraph Step4 [" "]
+        direction TB
+        Title4["<b>VỊ TRÍ NÀO CÓ THỂ<br/>ĐƯỢC CẢI THIỆN</b>"]
+        List4["PHÂN TÍCH KHOẢNG TRỐNG<br/>CÁC CHU KỲ CẢI THIỆN CHẤT LƯỢNG<br/>ĐÁNH GIÁ THÔNG TIN ĐẤU VÀO<br/>TỪ TẤT CẢ CÁC BÊN LIÊN QUAN"]
+    end
+
+    Step1 --> Step2
+    Step2 --> Step3
+    Step3 --> Step4
+
+    style Step1 fill:#e74c3c, color:white, stroke:none, border-radius:10px
+    style Step2 fill:#f39c12, color:white, stroke:none, border-radius:10px
+    style Step3 fill:#cddc39, color:#333, stroke:none, border-radius:10px
+    style Step4 fill:#8bc34a, color:white, stroke:none, border-radius:10px
+    
+    style Title1 fill:none, stroke:none, color:white, font-weight:bold, font-size:16px
+    style List1 fill:none, stroke:none, color:white, text-align:left
+    style Title2 fill:none, stroke:none, color:white, font-weight:bold, font-size:16px
+    style List2 fill:none, stroke:none, color:white, text-align:left
+    style Title3 fill:none, stroke:none, color:#333, font-weight:bold, font-size:16px
+    style List3 fill:none, stroke:none, color:#333, text-align:left
+    style Title4 fill:none, stroke:none, color:white, font-weight:bold, font-size:16px
+    style List4 fill:none, stroke:none, color:white, text-align:left
+```
+
+
+### Diagram 3 — image_000002_80fba5e3a28e56ab4d2b42084c2eba96a55b366ad75b5f5b895becb9386cf2f8.png
+
+```mermaid
+flowchart TD
+    A["CÁC DỊCH VỤ CHĂM SÓC BỆNH NHÂN ĐỘT QUỴ<br/>NÂNG CAO"]
+    B["CÁC DỊCH VỤ CHĂM SÓC BỆNH NHÂN ĐỘT QUỴ<br/>CẤP THIẾT"]
+    C["DỊCH VỤ CHĂM SÓC SỨC KHỎE<br/>TỐI THIỂU"]
+
+    A --- B
+    B --- C
+
+    classDef top fill:#5cb85c,stroke:none,color:white,font-weight:bold;
+    classDef mid fill:#f0ad4e,stroke:none,color:white,font-weight:bold;
+    classDef bot fill:#d9534f,stroke:none,color:white,font-weight:bold;
+
+    class A top
+    class B mid
+    class C bot
+```
+
+
+### Diagram 4 — image_000003_192f81eda732a36ac300dd23660876d3018a1f331765bf47b791d1bc713d2f60.png
+
+```mermaid
+flowchart TD
+    Start([KHỞI PHÁT ĐỘT QUỴ<br/>VÀ GIỚI THIỆU CÁC<br/>DỊCH VỤ CHĂM SÓC<br/>SỨC KHỎE]) --> Fast[("NHẬN BIẾT NHANH CÁC TRIỆU CHỨNG ĐỘT QUỴ<br/>'FAST' FACE, ARM, SPEECH, TIME<br/>MẶT, CÁNH TAY, LỜI NÓI, THỜI GIAN")]
+    
+    Fast --> CT_Check{CHỤP CẮT LỚP CT<br/>CÓ SẴN TẠI CHỖ?}
+    
+    CT_Check -- CÓ --> YesNode((CÓ))
+    YesNode --> CT_Scan[CHỤP CT NGAY]
+    
+    CT_Check -- KHÔNG --> NoNode((KHÔNG))
+    NoNode --> Transfer_Check{KHẢ NĂNG CHUYỂN ĐẾN<br/>MỘT CƠ SỞ CHĂM SÓC SỨC<br/>KHỎE CÓ CHỤP CT}
+    
+    Transfer_Check -->|Có thể chuyển| CT_Scan
+    Transfer_Check -- KHÔNG --> NoTransfer((KHÔNG))
+    NoTransfer --> Eval_Initial[Đánh Giá Y Khoa và Chăm Sóc<br/>Siêu Cấp Tính Ban Đầu]
+    
+    CT_Scan --> Eval_Urgent[Đánh Giá Y Khoa & Quản Lý<br/>Đột Quỵ Siêu Cấp<br/>Tính Ban Đầu]
+    
+    Eval_Urgent & Eval_Initial --> Phase1
+    
+    subgraph CareContinuum [QUY TRÌNH CHĂM SÓC]
+        direction TB
+        Phase1[("CHĂM SÓC TRƯỚC KHI ĐẾN BỆNH VIỆN<br/>VÀ TẠI PHÒNG CẤP CỨU<br/>- Hình Ảnh Học Thần Kinh<br/>- Phòng Thí Nghiệm Chẩn Đoán<br/>- Liệu Pháp Làm Tan Huyết Khối...")]
+        Phase2[("CHĂM SÓC<br/>NỘI TRÚ CẤP TÍNH<br/>- Đơn Vị Chăm Sóc Bệnh Nhân Đột Quỵ<br/>- Đánh Giá Khả Năng Cử Động...")]
+        Phase3[("PHÒNG NGỪA<br/>ĐỘT QUỴ TÁI PHÁT<br/>- Kiểm Soát Huyết Áp<br/>- Chống Huyết Khối...")]
+        Phase4[("PHỤC HỒI CHỨC<br/>NĂNG CHO BỆNH<br/>NHÂN ĐỘT QUỴ<br/>- Khả Năng Cử Động<br/>- Chống Nhộn Thức...")]
+        Phase5[("TÁI HÒA NHẬP<br/>CỘNG ĐỒNG VÀ<br/>PHỤC HỒI<br/>- Kiểm Soát Sự Biến Đổi<br/>- Điều Chỉnh Cuộc Sống...")]
+    end
+
+    Phase1 --> Phase2 --> Phase3 --> Phase4 --> Phase5
+
+    SideLeft((Giáo Dục và<br/>Hỗ Trợ Bệnh<br/>Nhân và Gia<br/>Đình)) -.-> CareContinuum
+    SideRight((Sử Dụng Công<br/>Nghệ cơ bản<br/>nhất đến<br/>phức tạp)) -.-> CareContinuum
+
+    style Start fill:#f0f8ff,stroke:#333,stroke-width:0px
+    style Fast fill:#4b6cb7,stroke:#333,color:#fff
+    style CT_Check fill:#a695d6,stroke:#333,color:#fff
+    style Phase1 fill:#ff6b6b,stroke:#333,color:#fff
+    style Phase2 fill:#9b59b6,stroke:#333,color:#fff
+    style Phase3 fill:#2ecc71,stroke:#333,color:#fff
+    style Phase4 fill:#f39c12,stroke:#333,color:#fff
+    style Phase5 fill:#3498db,stroke:#333,color:#fff
+    style YesNode fill:#95a5a6,color:#fff
+    style NoNode fill:#95a5a6,color:#fff
+    style NoTransfer fill:#95a5a6,color:#fff
+```
+
+
+### Diagram 5 — image_000004_cc5cc7b2f9c3f4b452f571d433940d81332a4f37a75094e1ded01e51cf6be508.png
+
+```mermaid
+| Giai đoạn | Nội dung chi tiết |
+| :--- | :--- |
+| **Thiết lập nhóm làm việc** | • Đảm bảo các bên liên quan quản chính là những người đại diện<br>• Tìm kiếm các chuyên gia từ các khu vực có thẩm quyền khác |
+| **Xác định phạm vi và chủ đề** | • Xác định các giai đoạn áp dụng của dịch vụ vụ chăm sóc bệnh nhân đột quỵ toàn diện<br>• Chọn các chủ đề chính cần được giải quyết trong hướng dẫn dành cho địa phương của quý vị |
+| **Tìm kiếm bằng chứng tốt nhất** | • Xem xét và lựa chọn hướng dẫn thích hợp từ các quốc gia đóng góp cho Hướng Dẫn Chăm Sóc Bệnh Nhân Đột Quỵ WSO làm cơ sở phát triển địa phương<br>• Sử dụng và soát bằng chứng có sẵn từ các hướng dẫn toàn cầu hiện có<br>• Tiến hành tìm kiếm bằng chứng để xác định thêm các bằng chứng cập nhật |
+| **Đánh Giá và Tổng Hợp bằng chứng** | • Tuân thủ các quá trình hệ thống để đánh giá chất lượng và độ tin cậy của bằng chứng mới |
+| **Chọn lựa các khuyến nghị và điều chỉnh theo yêu cầu cho phù hợp với hoàn cảnh tại địa phương** | • Phải rõ ràng và súc tích nhất có thể.<br>• Bao gồm các nội dung quan trọng để bao gồm phạm vi (Phụ Lục Một)<br>• Liên kết bằng chứng với các khuyến nghị |
+| **Tư Vấn và Đánh Giá Bên Ngoài** | • Bao gồm các cuộc thảo luận với người dùng cuối, các nhà lãnh đạo hệ thống và các nhà tài trợ<br>• Đánh giá bên ngoài bởi các chuyên gia không tham gia vào quá trình phát triển và điều chỉnh ban đầu |
+| **Phổ Biến và Thực Hiện** | • Cung cấp các công cụ hỗ trợ thực hiện<br>• Cung cấp giáo dục và đào tạo kỹ năng cho tất cả những người tham gia vào việc cung cấp dịch vụ y chăm sóc |
+| **Chiến Lược Đánh Giá** | • Xác định các chỉ số chất lượng chính để đánh giá thực hiện và tác động lên kết quả về tình trạng sức khỏe của bệnh nhân<br>• Có thể thu thập dữ liệu thông qua quá trình đăng ký hoặc kiểm toán thường xuyên |
+```
+
+
+### Diagram 6 — image_000005_94e28a8037c6f5bc85a81fb2b4543c3a032905b62789aa704b823361f905d528.png
+
+```mermaid
+flowchart TD
+    A["CÁC DỊCH VỤ CHĂM SÓC<br/>THẦN KINH DƯỚI GÓC<br/>NÂNG CAO"]
+    B["CÁC DỊCH VỤ CHĂM SÓC<br/>BỆNH NHÂN DƯỚI GÓC<br/>CẤP THIẾT"]
+    C["DỊCH VỤ CHĂM SÓC SỨC KHỎE<br/>TỐI THIỂU"]
+
+    A --- B
+    B --- C
+
+    style A fill:#4CAF50,color:white,stroke:none
+    style B fill:#FFC107,color:black,stroke:none
+    style C fill:#F44336,color:white,stroke:none
+```
+
+
+### Diagram 13 — image_000012_be2f1415085681e8b0ec48ba7aa184e0ec0d3b659215df5848ceb7aa45072059.png
+
+```mermaid
+| Dịch Vụ Chăm Sóc Sức Khỏe Tối Thiểu | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cấp Thiết (Ngoài các dịch vụ được liệt kê trong mục Dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu) | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cao Cấp (Ngoài các dịch vụ được liệt kê trong mục Các dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu và cấp thiết) |
+| :--- | :--- | :--- |
+| Có thể cung cấp dịch vụ chăm sóc tại cộng đồng địa phương mà không có sự phối hợp giữa các khu vực địa lý xác định | Dịch vụ chăm sóc bệnh nhân đột quỵ phối hợp giới hạn được cung cấp trong các khu vực địa lý rời rạc | Dịch vụ chăm sóc bệnh nhân đột quỵ phối hợp đầy đủ được cung cấp trong các khu vực địa lý riêng biệt |
+| Không được tiếp cận các dịch vụ y tế chuyên khoa hoặc chăm sóc tại bệnh viện để điều trị đột quỵ siêu cấp tính | Các chương trình đào tạo về đột quỵ cho tất cả các cấp của các nhà cung cấp dịch vụ chăm sóc sức khỏe | Các dịch vụ chăm sóc bệnh nhân đột quỵ cao cấp được hợp lý hóa thành một số trung tâm nhỏ hơn |
+| Tiếp cận với các bác sỹ rất hạn chế<br>- Cung cấp chương trình phát triển kỹ năng đánh giá<br>- Tập huấn chuyên về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt; và kiểm soát nhiệt độ | Tiếp cận các dịch vụ chẩn đoán cơ bản | Lộ trình cho bệnh nhân đột quỵ xác định hướng di chuyển của bệnh nhân đột quỵ trong khu vực tới các cấp dịch vụ cao hơn và thấp hơn theo yêu cầu |
+| Thay đổi mức độ tiếp cận tới nhân viên chăm sóc sức khỏe (y tá hoặc nhân viên công tác giáo dân)<br>- Tập huấn cơ bản về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt; và kiểm soát nhiệt độ | Sự tiếp cận hạn chế với các dịch vụ y tế cấp cứu | Hệ thống giới thiệu phối hợp |
+| | Tiếp cận với các bác sỹ và đánh giá về điều dưỡng thông qua chương trình đào tạo về chăm sóc bệnh nhân đột quỵ | Cung cấp tư vấn về đột quỵ từ xa tới các trung tâm nhỏ hơn và hẻo lánh hơn |
+| | Tiếp cận với các bác sỹ có chuyên môn đột quỵ (mặc dù không phải là chuyên gia về đột quỵ) | Cơ thoả thuận bộ qua xe cứu thương |
+| | Tiếp cận với liệu pháp làm tan huyết khối cấp tính bằng tPA được truyền qua đường tĩnh mạch<br>- tPA (Alteplase) được truyền qua đường tĩnh mạch | Cơ thoả thuận hồi hương để chuyển bệnh nhân trở về cộng đồng tại nơi sinh sống |
+| | Tiếp cận các thành viên cốt lõi của nhóm đột quỵ liên ngành (MD, RN, PT, OT) | Bản in tài liệu giáo dục về bệnh nhân đột quỵ |
+| | Tiếp cận các dịch vụ chẩn đoán cơ bản<br>- Xét nghiệm máu trong phòng thí nghiệm (CBC, chất điện phân, urê, đường glucose, INR, PT)<br>- Điện tâm đồ (12 đạo trình)<br>- Chụp Cắt Lớp (CT) não và hệ mạch máu<br>- Năng Lực chụp CT Mạch Máu (CTA)<br>- Siêu âm tim<br>- Siêu âm Doppler<br>- Máy đo nhịp tim Holter | Các chương trình đào tạo về đột quỵ cho tất cả các cấp của các nhà cung cấp dịch vụ chăm sóc sức khỏe |
+| | Sự tiếp cận hạn chế với các dịch vụ y tế cấp cứu<br>- Đào tạo các đội làm việc trên xe cấp cứu để nhận biết các dấu hiệu đột quỵ bằng cách sử dụng thang ngữ ngữ nhớ FAST<br>- Làm việc với các hệ thống cứu thương để xác định đột quỵ như là một trường hợp cấp cứu cần mức ưu tiên vận chuyển cao, ngoài các chấn thương và nguy cơ cơ sở khoa | Chiến lược và cơ chế thu thập dữ liệu<br>- Số đăng ký bệnh nhân nội trú đột quỵ cấp tính<br>- Cơ sở dữ liệu bệnh nhân nội trú đột quỵ cấp tính (địa phương hoặc khu vực)<br>- Số đăng ký phòng chống đột quỵ<br>- Cơ sở dữ liệu phòng chống đột quỵ<br>- Số đăng ký phục hồi sau đột quỵ<br>- Cơ sở dữ liệu phục hồi sau đột quỵ (địa phương hoặc khu vực) |
+| | | Tiếp cận các dịch vụ chẩn đoán cao cấp<br>- Chụp Cộng Hưởng Từ (MRI)<br>- Năng Lực chụp MR Mạch Máu<br>- Chụp CT Tưới Máu<br>- Các thiết bị theo dõi ECG kéo dài |
+```
+
+
+### Diagram 14 — image_000013_00ccfec6e4bf18007841718ed9bc598426a818250a16000d54463a7904ac62a8.png
+
+```mermaid
+| Dịch Vụ Chăm Sóc Sức Khỏe Tối Thiểu | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quy Cấp Thấp (Ngoài các dịch vụ được liệt kê trong mục Dịch vụ chăm sóc bệnh nhân đột quy tối thiểu) | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quy Cao Cấp (Ngoài các dịch vụ được liệt kê trong mục Các dịch vụ chăm sóc bệnh nhân đột quy tối thiểu và cấp thiết) |
+| :--- | :--- | :--- |
+| Tiếp cận với các y tá và đánh giá để điều dưỡng thông qua chương trình đào tạo về chăm sóc bệnh nhân đột quỵ<br>- Địa điểm chăm sóc ban đầu<br>- Địa điểm chăm sóc cấp tính<br>- Y tá được đào tạo nâng cao<br>- Chuyên viên điều dưỡng | Tiếp cận với các bác sĩ có chuyên môn đột quỵ (mặc dù không phải là chuyên gia về đột quỵ)<br>- Bác sĩ Đa khoa/Gia đình/Chăm sóc chính<br>- Nhà thần kinh học<br>- Bác sĩ giải phẫu thần kinh<br>- Bác sĩ nội khoa<br>- Bác sĩ tim mạch<br>- Bác sĩ lão khoa<br>- Y Khoa Cấp Cứu<br>- Bác sĩ chuyên chăm sóc cho bệnh nhân nguy kịch<br><br>Tiếp cận với các chuyên gia về đột quỵ thông qua phương thức điều trị đột quỵ từ xa, và chụp Xquang viễn thông<br><br>Tiếp cận với liệu pháp làm tan huyết khối cấp tính bằng tPA được truyền qua đường tĩnh mạch<br>- tPA (Alteplase) được truyền qua đường tĩnh mạch<br><br>Các thành viên của nhóm đột quỵ liên ngành<br>- Bác sĩ có chuyên môn đột quỵ<br>- Y Tá Chăm Sóc Bệnh Nhân Đột Quy<br>- Trợ lý điều dưỡng<br>- Dược sĩ<br>- Nhân viên xã hội/quản lý trường hợp<br>- Nhóm Chăm Sóc Giảm Nhẹ<br>- Nhà vật lý trị liệu<br>- Nhà Trị Liệu Chức Năng Vận Động<br>- Nhà Trị Liệu Ngôn Ngữ<br><br>Các phác đồ để đánh giá và chẩn đoán nhanh bệnh nhân đột quỵ<br><br>Giáo dục, đào tạo kỹ năng và thu hút sự tham gia vào việc lập kế hoạch chăm sóc đối với bệnh nhân và gia đình<br><br>Lập kế hoạch xuất viện<br><br>Dịch vụ chăm sóc bệnh nhân đột quỵ phối hợp giới hạn hạn được cung cấp trong các khu vực địa lý rời rạc<br><br>Các chương trình đào tạo về đột quỵ cho tất cả các cấp của các nhà cung cấp dịch vụ chăm sóc sức khỏe | Tiếp cận với các bác sĩ có chuyên môn đột quỵ trong việc chăm sóc bệnh nhân đột quỵ cấp tính, phòng ngừa đột quỵ và hoặc phục hồi chức năng sau đột quỵ<br>- Nhà thần kinh học<br>- Bác sĩ giải phẫu thần kinh<br>- Bác sĩ nội trú<br>- Bác sĩ chẩn đoán hình ảnh não/ bác sĩ can thiệp<br>- Bác sĩ lão khoa<br>- Bác sĩ chuyên chăm sóc cho bệnh nhân nguy kịch<br>- Bác sĩ tim mạch<br>- Y Khoa Cấp Cứu<br>- Bác sĩ Đa khoa/Gia đình/Chăm sóc chính<br>- Chương trình phát triển và duy trì năng lực cốt lõi trong chăm sóc bệnh nhân đột quỵ<br><br>Tiếp cận với các thành viên bổ sung của nhóm đột quỵ cấp tính liên ngành<br>- Y tá<br>- Trợ lý điều dưỡng<br>- Dược sĩ<br>- Nhóm Chăm Sóc Giảm Nhẹ<br><br>Tiếp cận các biện pháp can thiệp tiên tiến:<br>- tPA (Alteplase) được truyền qua đường tĩnh mạch<br>- Hút huyết khối nội mạch<br>- Phẫu thuật thần kinh cho bệnh nhân đột quỵ xuất huyết<br>- Phẫu thuật mở hộp sọ bán phần cho bệnh nhân đột quỵ thiếu máu cục bộ<br>- Các đơn vị chăm sóc bệnh nhân nội trú đột quỵ cấp tính<br>- Sản phẩm để điều trị chứng rối loạn đông máu |
+```
+
+
+### Diagram 22 — image_000021_53a1ae3b065e7bba5554042a5fc80ad2a61600086093e0926f5054c93ec4074a.png
+
+```mermaid
+| Dịch Vụ Chăm Sóc Sức Khỏe Tối Thiểu | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cấp Thiết (Ngoài các dịch vụ được liệt kê trong mục Dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu) | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cao Cấp (Ngoài các dịch vụ được liệt kê trong mục Các dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu và cấp thiết) |
+| :--- | :--- | :--- |
+| **Có thể cung cấp dịch vụ chăm sóc tại cộng đồng địa phương mà không có sự phối hợp giữa các khu vực địa lý xác định** | **Tiếp cận các dịch vụ chẩn đoán cơ bản**<br>- Xét nghiệm máu trong phòng thí nghiệm (CBC, chất điện phân, urê, đường glucose, INR, PT)<br>- Điện tâm đồ (12 đạo trình)<br>- Chụp Cắt Lớp (CT) não và hệ mạch máu<br>- Năng lực chụp CT Mạch Máu (CTA)<br>- Siêu âm tim<br>- Siêu âm Doppler<br>- Máy đo nhịp tim Holter | **Tiếp cận các dịch vụ chẩn đoán cao cấp**<br>- Chụp Cộng Hưởng Từ (MRI)<br>- Năng Lực chụp MR Mạch Máu<br>- Chụp CT Tưới Máu<br>- Các thiết bị theo dõi ECG kéo dài |
+| **Không được tiếp cận các dịch vụ y chẩn đoán hoặc chăm sóc tại bệnh viện để điều trị đột quỵ siêu cấp tính** | **Sự tiếp cận hạn chế với các dịch vụ y tế cấp cứu**<br>- Đào tạo đội cứu thương để xác định các dấu hiệu đột quỵ bằng cách sử dụng phương pháp nhớ FAST<br>- Làm việc với các hệ thống cứu thương đã xác định đột quỵ như là một trường hợp cấp cứu cần mức ưu tiên vận chuyển cao, ngoài các chấn thương và nguy cơ sản khoa | **Tiếp cận với các bác sĩ có chuyên môn đột quỵ trong việc chăm sóc bệnh nhân đột quỵ cấp tính, phòng ngừa đột quỵ và hoặc phục hồi chức năng sau đột quỵ**<br>- Nhà thần kinh học<br>- Bác sĩ giải phẫu thần kinh<br>- Bác sĩ nội trú<br>- Bác sĩ chẩn đoán hình ảnh não/ bác sĩ can thiệp<br>- Bác sĩ lão khoa<br>- Bác sĩ chuyên chăm sóc cho bệnh nhân nguy kịch<br>- Bác sĩ tim mạch<br>- Y Khoa Cấp Cứu<br>- Bác sĩ Đa khoa/Gia đình/Chăm sóc chính<br>- Chương trình phát triển và duy trì năng lực cốt lõi trong chăm sóc bệnh nhân đột quỵ |
+| **Tiếp cận với các bác sỹ rất hạn chế**<br>- Cung cấp chương trình phát triển kỹ năng đánh giá<br>- Tập huấn cơ bản về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt và kiểm soát nhiệt độ | **Tiếp cận với các y tá và đánh giá về điều dưỡng thông qua chương trình đào tạo về chăm sóc bệnh nhân đột quỵ**<br>- Địa điểm chăm sóc ban đầu<br>- Y tá được đào tạo nâng cao<br>- Chuyên viên điều dưỡng | **Tiếp cận với các thành viên bổ sung của nhóm đột quỵ cấp tính liên ngành**<br>- Y tá<br>- Trợ lý điều dưỡng<br>- Dược sĩ<br>- Nhóm Chăm Sóc Giảm Nhẹ |
+| **Thay đổi mức độ tiếp cận tới nhân viên chăm sóc sức khỏe (y tá hoặc nhân viên công tác giáo dân)**<br>- Tập huấn cơ bản về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt và kiểm soát nhiệt độ | **Tiếp cận với đội ngũ bác sĩ có chuyên môn đột quỵ (mặc dù không khồng phải là chuyên gia về đột quỵ)**<br>- Bác sĩ Đa khoa/Gia đình/Chăm sóc chính<br>- Nhà thần kinh học<br>- Bác sĩ giải phẫu thần kinh<br>- Bác sĩ nội khoa<br>- Bác sĩ tim mạch<br>- Bác sĩ lão khoa<br>- Y Khoa Cấp Cứu<br>- Bác sĩ chuyên chăm sóc cho bệnh nhân nguy kịch<br>- Tiếp cận với các chuyên gia về đột quỵ thông qua phương thức điều trị đột quỵ từ xa, và chụp Xquang viễn thông | **Tiếp cận các biện pháp can thiệp tiên tiến**<br>- tPA (Alteplase) được truyền qua đường tĩnh mạch<br>- Hút huyết khối nội mạch<br>- Phẫu thuật thần kinh cho bệnh nhân đột quỵ xuất huyết<br>- Phẫu thuật mở hộp sọ biến phân cho bệnh nhân đột quỵ thiếu máu cục bộ<br>- Các đơn vị chăm sóc bệnh nhân nội trú đột quỵ cấp tính<br>- Sản phẩm để điều trị chứng rối loạn đông máu |
+| | **Tiếp cận với liệu pháp làm tan huyết khối cấp tính bằng tPA được truyền qua đường tĩnh mạch**<br>- tPA (Alteplase) được truyền qua đường tĩnh mạch | |
+```
+
+
+### Diagram 38 — image_000037_d9471d933430d24b2f7ab271d78a3ac014d08db8eaaa9d38095afd390715933e.png
+
+```mermaid
+| Dịch Vụ Chăm Sóc Sức Khỏe Tối Thiểu | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cấp Thiết (Ngoài các dịch vụ được liệt kê trong mục Dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu) | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cao Cấp (Ngoài các dịch vụ được liệt kê trong mục Các dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu và cấp thiết) |
+| :--- | :--- | :--- |
+| - Có thể cung cấp dịch vụ chăm sóc tại cộng đồng địa phương mà không có sự phối hợp giữa các khu vực địa lý xác định<br>- Tiếp cận với các bác sỹ rất hạn chế<br>- Cung cấp các chương trình phát triển kỹ năng dành già yếu tố cơ bản dẫn tới nguy cơ đột quỵ: huyết áp, rung nhĩ (kiểm tra nhịp tim), tập thể dục, việc sử dụng đồ uống có cồn, chế độ ăn uống (liên quan đến các trường hợp)<br>- Kỹ năng cơ bản trong quản lý yếu tố nguy cơ, thuốc, quản lý lối sống<br>- Tập huấn về các kỹ thuật phục hồi chức năng cơ bản, di chuyển và định vị mà có thể hướng dẫn lại cho gia đình<br>- Tập huấn cơ bản về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt; và kiểm soát nhiệt độ<br>- Tiếp đối mức độ tiếp cận tài nguyên nhiên chăm sóc sức khỏe (y tá hoặc nhân viên công tác giáo dân)<br>- Đào tạo về đánh giá yếu tố cơ bản về nguy cơ đột quỵ: huyết áp, rung nhĩ (kiểm tra nhịp tim), tập thể dục, sử dụng đồ uống có cồn, chế độ ăn uống (liên quan đến các trường hợp)<br>- Tập huấn về các kỹ thuật phục hồi chức năng cơ bản, di chuyển và định vị mà có thể hướng dẫn lại cho gia đình<br>- Tập huấn cơ bản về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt; và kiểm soát nhiệt độ<br>- Không được tiếp cận các dịch vụ chẩn đoán hoặc chăm sóc tại bệnh viện<br>- Tiếp cận hạn chế với các lời khuyên về cách phòng ngừa cơ bản nhất trong lối sống<br>- Truy cập Internet<br>- Tiếp cận chương trình giáo dục về đột quỵ qua thiết bị di động (như WSA)<br>- Tiếp cận các công cụ di động như Máy Đo Nguy Cơ Đột Quỵ | - Tiếp cận các dịch vụ chẩn đoán cơ bản<br>  - Xét nghiệm máu trong phòng thí nghiệm (CBC, chất điện phân, urê, đường glucose, INR, PT)<br>  - Điện tâm đồ (12 đạo trình)<br>  - Chụp Cắt Lớp (CT) não và hệ mạch máu<br>  - Nâng Lực chụp CT Mạch Máu (CTA)<br>  - Siêu âm tim<br>  - Siêu âm Doppler<br>  - Máy đo nhịp tim Holter<br>- Tiếp cận với các y tá và đánh giá về điều dưỡng thông qua chương trình đào tạo về chăm sóc bệnh nhân đột quỵ<br>  - Địa điểm chăm sóc cấp tính<br>  - Y tá được đào tạo nâng cao<br>  - Chuyên viên điều dưỡng<br>- Tiếp cận với các bác sĩ có chuyên môn đột quỵ (mặc dù không phải là chuyên gia về đột quỵ)<br>  - Bác sĩ Đa khoa/Gia đình/Chăm sóc chính<br>  - Nhà thần kinh học<br>  - Bác sĩ giải phẫu thần kinh<br>  - Bác sĩ nội trú<br>  - Bác sĩ tim mạch<br>  - Bác sĩ lão khoa<br>  - Y Khoa Cấp Cứu<br>  - Y Học Thể Chất và Phục Hồi Chức Năng<br>  - Bác sĩ chuyên chăm sóc cho bệnh nhân nguy kịch<br>- Tiếp cận với các chuyên gia về đột quỵ thông qua phương thức điều trị đột quỵ từ xa, và chụp Xquang viễn thông<br>- Tiếp cận việc chăm sóc bệnh nhân nội trú đột quỵ cấp tính nơi các bệnh nhân bị đột quỵ đã nhập viện được chăm sóc ở:<br>  - Đơn Vị Chăm Sóc Đột Quỵ<br>  - Mô hình cụm ổ cứng khoa<br>  - Phân tán khắp bệnh viện<br>- Tiếp cận chăm sóc tại đơn vị chăm sóc đột quỵ (Mô-đun WSA):<br>  - Đơn vị xác định về mặt địa lý dành cho dịch vụ chăm sóc bệnh nhân liên ngành<br>  - Hoặc, mô hình phân nhóm bệnh nhân đột quỵ<br>  - Các thành viên của nhóm đột quỵ liên ngành<br>  - Bác sĩ có chuyên môn đột quỵ<br>  - Y Tá Chăm Sóc Bệnh Nhân Đột Quỵ | - Tiếp cận các dịch vụ chẩn đoán cao cấp<br>  - Chụp Cộng Hưởng Từ (MRI)<br>  - Nâng Lực chụp MR Mạch Máu<br>  - Chụp CT Tưới Máu<br>  - Các thiết bị theo dõi ECG kéo dài<br>- Tiếp cận với các bác sĩ có chuyên môn đột quỵ trong việc chăm sóc bệnh nhân đột quỵ cấp tính, phòng ngừa đột quỵ và/hoặc phục hồi chức năng sau đột quỵ<br>  - Nhà thần kinh học<br>  - Bác sĩ giải phẫu thần kinh<br>  - Bác sĩ nội trú<br>  - Bác sĩ chẩn đoán hình ảnh/ bác sĩ can thiệp<br>  - Bác sĩ lão khoa<br>  - Bác sĩ chuyên chăm sóc cho bệnh nhân nguy kịch<br>  - Bác sĩ tim mạch<br>  - Y Khoa Cấp Cứu<br>  - Y Học Thể Chất và Phục Hồi Chức Năng<br>  - Bác sĩ Đa khoa/Gia đình/Chăm sóc chính<br>  - Chương trình phát triển và duy trì nâng lực cốt lõi trong chăm sóc bệnh nhân đột quỵ<br>- Tiếp cận với các thành viên bổ sung của nhóm đột quỵ cấp tính liên ngành<br>  - Y tá<br>  - Trợ lý điều dưỡng<br>  - Dược sĩ<br>  - Nhân viên xã hội/quản lý trường hợp<br>  - Nhóm Chăm Sóc Giảm Nhẹ<br>  - Xem dưới đây để biết nhân viên phục hồi chức năng)<br>- Dịch vụ chăm sóc bệnh nhân đột quỵ phối hợp đầy đủ được cung cấp trong các khu vực địa lý riêng biệt<br>  - Các dịch vụ chăm sóc bệnh nhân đột quỵ cao cấp được hợp lý hóa thành một số trung tâm nhỏ hơn<br>  - Lộ trình cho bệnh nhân đột quỵ xác định hướng di chuyển của bệnh nhân đột quỵ trong khu vực tới các cấp dịch vụ cao hơn và thấp hơn theo yêu cầu |
+```
+
+
+### Diagram 39 — image_000038_9dc94e663593e9f05a03e1162402a1d17c5a42783efa1c58379946a430580b84.png
+
+```mermaid
+| Dịch Vụ Chăm Sóc Sức Khỏe Tối Thiểu | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cấp Thiết (Ngoài các dịch vụ được liệt kê trong mục Dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu) | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Cao Cấp (Ngoài các dịch vụ được liệt kê trong mục Các dịch vụ chăm sóc bệnh nhân đột quỵ tối thiểu và cấp thiết) |
+| :--- | :--- | :--- |
+| - Tiếp cận với các dịch vụ phục hồi chức năng sau đột quỵ: Xây dựng các đánh giá chức năng sớm, thiết lập mục tiêu và kế hoạch phục hồi cá nhân<br><br>- Tiếp cận các liệu pháp phòng ngừa đột quỵ như thuốc aspirin, để nghị thay đổi lối sống, kiểm soát huyết áp<br><br>- Dịch vụ chăm sóc bệnh nhân đột quỵ phối hợp giới hạn được cung cấp trong các khu vực địa lý rời rạc<br><br>- Các chương trình đào tạo về đột quỵ cho tất cả các cấp của các nhà cung cấp dịch vụ chăm sóc sức khỏe | - Trợ lý điều dưỡng<br>- Dược sĩ<br>- Nhân viên xã hội/quản lý trường hợp<br>- Nhóm Chăm Sóc Giảm Nhẹ<br>- Nhà vật lý trị liệu<br>- Nhà Trị Liệu Chức Năng Vận Động<br>- Nhà Trị Liệu Ngôn Ngữ<br>• Các phác đồ để đánh giá và chẩn đoán nhanh bệnh nhân đột quỵ<br>• Các phác đồ hướng dẫn chăm sóc bệnh nhân đột quỵ cấp tính dựa trên hướng dẫn thực hành tốt<br>- Các đánh giá y tế và điều dưỡng<br>- Tiền sử trước đây<br>- Khám sàng lọc rối loạn chức năng nuốt<br>- Dinh dưỡng, bù nước<br>- Tình trạng chức năng, khả năng cử động<br>- Nguy cơ huyết khối tĩnh mạch sâu (DVT)<br>- Mức độ phụ thuộc<br>- Khả năng kiểm soát bàng quang<br>- Nhiệt độ<br>• Các cuộc họp liên ngành hàng tuần để thảo luận về sự tiến triển của bệnh nhân đối với các mục tiêu điều trị, cập nhật kế hoạch quản lý<br>• Tiếp cận sớm các liệu pháp phục hồi chức năng - bao gồm cả đào tạo kỹ năng cho các y, tá, các trợ lý điều dưỡng và các thành viên trong gia đình<br>• Giáo dục, đào tạo kỹ năng và thu hút sự tham gia vào việc lập kế hoạch chăm sóc đối với bệnh nhân và gia đình<br>• Lập kế hoạch xuất viện | ◉ Hệ thống giới thiệu phối hợp<br>Cung cấp tư vấn về đột quỵ từ xa tới các trung tâm nhỏ hơn và hẻo lánh hơn<br>• Có thoả thuận bỏ qua xe cứu thương<br>• Có thoả thuận hồi hương để chuyển bệnh nhân bị về cộng đồng tại nơi sinh sống<br>• Tiếp cận các phác đồ chăm sóc bệnh nhân bị đột quỵ: đánh giá chức năng nuốt, thức ăn và chất lỏng, Định vị, di chuyển, khả năng kiểm soát, biến chứng (sốt, huyết khối tĩnh mạch sâu (DVT), loét da do điểm tỳ)<br>• Bản in tài liệu giáo dục về bệnh nhân đột quỵ<br><br>◉ Các chương trình đào tạo về đột quỵ cho tất cả các cấp của các nhà cung cấp dịch vụ chăm sóc sức khỏe<br><br>◉ Chiến lược và cơ chế thu thập dữ liệu<br>• Số đăng ký bệnh nhân nội trú đột quỵ cấp tính<br>• Cơ sở dữ liệu bệnh nhân nội trú đột quỵ cấp tính (địa phương hoặc khu vực)<br>• Số đăng ký phòng chống đột quỵ<br>• Cơ sở dữ liệu phòng chống đột quỵ<br>• Số đăng ký phục hồi sau đột quỵ<br>• Cơ sở dữ liệu phục hồi sau đột quỵ (địa phương hoặc khu vực) |
+```
+
+
+### Diagram 44 — image_000043_3856714ab421bfcb7c8b6fcd63ee87a32ecd6e352fb2c6207e088fa31d33dd51.png
+
+```mermaid
+| Dịch Vụ Chăm Sóc Sức Khỏe Tối Thiểu | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quy Cấp Thiết (Ngoài các dịch vụ được liệt kê trong mục Dịch vụ chăm sóc bệnh nhân đột quy tối thiểu) | Các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quy Cao Cấp (Ngoài các dịch vụ được liệt kê trong mục Các dịch vụ chăm sóc bệnh nhân đột quy tối thiểu và cấp thiết) |
+| :--- | :--- | :--- |
+| Có thể cung cấp dịch vụ chăm sóc tại cộng đồng địa phương mà không có sự phối hợp giữa các khu vực địa lý xác định | **Tiếp cận các dịch vụ chẩn đoán cơ bản**<br>- Xét nghiệm máu trong phòng thí nghiệm (CBC, chất điện phân, urê, đường glucose, INR, PT)<br>- Điện tâm đồ (12 đạo trình)<br>- Chụp Cắt Lớp (CT) não và hệ mạch máu<br>- Nâng Lực chụp CT Mạch Máu (CTA)<br>- Siêu âm tim<br>- Siêu âm Doppler<br>- Máy đo nhịp tim Holter | **Tiếp cận các dịch vụ chẩn đoán cao cấp**<br>- Chụp Cộng Hưởng Từ (MRI)<br>- Nâng Lực chụp MR Mạch Máu<br>- Chụp CT Tưới Máu<br>- Các thiết bị theo dõi ECG kéo dài |
+| Tiếp cận với các bác sĩ rất hạn chế | **Tiếp cận với các y tá và đánh giá về điều dưỡng thông qua qua chương trình đào tạo về chăm sóc bệnh nhân đột quy**<br>- Địa điểm chăm sóc ban đầu<br>- Địa điểm chăm sóc cấp tính<br>- Y tá được đào tạo nâng cao<br>- Chuyên viên điều dưỡng | **Tiếp cận với các bác sĩ có chuyên môn đột quy trong việc chăm sóc bệnh nhân đột quy cấp tính, phòng ngừa đột quy và/hoặc phục hồi chức năng sau đột quy**<br>- Nhà thần kinh học<br>- Bác sĩ giải phẫu thần kinh<br>- Bác sỹ nội trú<br>- Bác sĩ chẩn đoán hình ảnh/ bác sĩ can thiệp<br>- Bác sĩ lão khoa<br>- Bác sỹ chuyên chăm sóc cho bệnh nhân nguy kịch<br>- Bác sĩ tim mạch<br>- Y Khoa Cấp Cứu<br>- Y Học Thể Chất và Phục Hồi Chức Năng<br>- Bác sĩ Đa khoa/Gia đình/Chăm sóc chính |
+| **Cung cấp chương trình phát triển kỹ năng dành gì**<br>- Cung cấp các chương trình đào tạo về đánh giá yếu tố cơ bản dẫn tới nguy cơ đột quy: huyết áp, rung nhĩ (kiểm tra nhịp tim), tập thể dục, việc sử dụng đồ uống có cồn, chế độ ăn uống (liên quan đến các trường hợp)<br>- Kỹ năng cơ bản trong quản lý yếu tố nguy cơ, thuốc, quản lý lối sống<br>- Tập huấn về các kỹ thuật phục hồi chức năng cơ bản, di chuyển và định vị mà có thể hướng dẫn lại cho gia đình<br>- Tập huấn cơ bản về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt và kiểm soát nhiệt độ | **Tiếp cận với các bác sĩ có chuyên môn đột quy (mặc dù không phải là chuyên gia về đột quy)**<br>- Bác sĩ Đa khoa/Gia đình/Chăm sóc chính<br>- Nhà thần kinh học<br>- Bác sĩ giải phẫu thần kinh<br>- Bác sỹ nội trú<br>- Bác sĩ tim mạch<br>- Bác sĩ lão khoa<br>- Y Khoa Cấp Cứu<br>- Y Học Thể Chất và Phục Hồi Chức Năng<br>- Bác sỹ chuyên chăm sóc cho bệnh nhân nguy kịch | **Tiếp cận với các thành viên bổ sung của nhóm đột quy cấp tính liên ngành**<br>- Y tá<br>- Trợ lý điều dưỡng<br>- Dược sĩ<br>- Nhân viên xã hội/quản lý trường hợp<br>- Nhóm Chăm Sóc Giảm Nhẹ<br>- (Xem dưới đây để biết nhân viên phục hồi chức năng) |
+| **Thay đổi mức độ tiếp cận tới nhân viên chăm sóc sức khỏe (y tá hoặc nhân viên công tác giáo dân)**<br>- Đào tạo về đánh giá yếu tố cơ bản về nguy cơ đột quy: huyết áp, rung nhĩ (kiểm tra nhịp tim), tập thể dục, sử dụng đồ uống có cồn, chế độ ăn uống (liên quan đến các trường hợp)<br>- Tập huấn về các kỹ thuật phục hồi chức năng cơ bản, di chuyển và định vị mà có thể hướng dẫn lại cho gia đình<br>- Tập huấn cơ bản về khám sàng lọc rối loạn chức năng nuốt và kiểm soát chứng khó nuốt và kiểm soát nhiệt độ | Tiếp cận với các chuyên gia về đột quy thông qua qua phương thức điều trị đột quy từ xa, và chụp Xquang viễn thông | Tiếp cận với các thành viên bổ sung của nhóm đột quy cấp tính liên ngành |
+| Không được tiếp cận các dịch vụ chuyên đoán hoặc chăm sóc tại bệnh viện | **Các thành viên của nhóm đột quy liên ngành**<br>- Bác sĩ có chuyên môn đột quy<br>- Y Tá Chăm Sóc Bệnh Nhân Đột Quy<br>- Trợ lý điều dưỡng<br>- Dược sĩ<br>- Nhân viên xã hội/quản lý trường hợp<br>- Nhóm Chăm Sóc Giảm Nhẹ<br>- Nhà vật lý trị liệu<br>- Nhà Trị Liệu Chức Năng Vận Động<br>- Nhà Trị Liệu Ngôn Ngữ | Dịch vụ chăm sóc bệnh nhân đột quy phối hợp được cung cấp trong các khu vực địa lý rời rạc |
+| Tiếp cận hạn chế với các lời khuyên về cách phòng ngừa cơ bản nhất trong lối sống | | Các chương trình đào tạo về phòng ngừa và kiểm soát đột quy cho tất cả các cấp của các nhà cung cấp dịch vụ chăm sóc sức khỏe |
+| **Truy cập Internet**<br>- Tiếp cận chương trình giáo dục về đột quy qua thiết bị di động (như WSA)<br>- Tiếp cận các công cụ di động như Máy Đo Nguy Cơ Đột Quy | | |
+```
+
