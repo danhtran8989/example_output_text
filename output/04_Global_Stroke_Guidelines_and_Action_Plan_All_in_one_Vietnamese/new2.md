@@ -15,6 +15,63 @@ Nhóm Làm Việc về Các Hướng Dẫn Chăm Sóc Bệnh Nhân Đột Quỵ 
 
 ## MỤC TIÊU:
 
+```mermaid
+flowchart LR
+    A[KHỐI PHÁT ĐỘT QUY<br>VÀ GIỚI THIEU CẦC DỊCH VỤ CHẤM SỐC SỨC KHÔE] 
+    split
+        B{{NỘI DUNG NHẤT NHẤI: FAST (FACE, ARM, SPEECH, TIME)}}\n(MẠT, CÁNH TAY, LỐI NỘI, THỐI GIAN)
+        | CHỨP CẤT LỮP (CT) CÓ SẢN TẠI CHỢ?
+        | CỌ (✔️) -> C
+        | KHÔNG (×) -> D
+    end
+    
+    C[ĐÁNH GIÁ Y KHOA & QUẢN\nLÝ ĐỘT QUY SIỆU CẤP\nTÍNH BAN DIỀU]
+    C -->|CHUP CT NGAY| E[CHUP CT NGÁY]
+    
+    D[ĐÁNH GIÁ Y KHOA VÀ CHÍNH\nSỐC SIỆU CẤP TÍNH BAN DIỀU]
+    D -->|NGAY SỀ ĐỘT KHŌE| F[NGAY SỀ ĐỘT KHŌE]
+    
+    subgraph ĐỊN
+        CHAM_SOC(
+            CHẤM SỐC TRƯỚC<br>KHI ĐẾN BỆNH VIỆN<br>VÀ TÁI PHƘNG CẤP CỦU
+        )
+        NHAN_SOC(
+            CHẤM SỐC NHÀN DỊT QUY
+        )
+        PHONG_NGUA(
+            PHỐNG NGỦA ĐỘT QUY TÀI PHÁT
+        )
+        PHUC_HOI(
+            PHỤC HỌI CHỨC NHÀNG CHO BỆNH\nNHÀNH ĐỌT QUY
+        )
+        TAI_HOA(
+            TÁI HOÀ NHẤP<br>CHỘNG ĐỒNG VÀ PHỤC HỌI
+        )
+    end
+    
+    subgraph KHỞ
+        GIAO_DUC(
+            GIẢO DỤC VÀ HO SỌC TRỰC\nNHÀNH VÀ GIẢO DỊNH
+        )
+    end
+    
+    split
+        CHẤM SỐC | ĐẾN Pha Qap
+        CHỨP CẤT | ĐẾn Phuc til
+    end
+    
+    C --> NHAN_SOC
+    CHAM_SOC --> NHAN_SOC
+    NHAN_SOC --> PHONG_NGUA
+    PHONG_NGUA --> PHUC_HOI
+    PHUC_HOI --> TAI_HOA
+    
+    E -->|GIẢO DỤC VÀ HO SỌC TRỰC NHÀNH VÀ GIẢO DỊNH| CHẤM SỐC
+    F -->|SỮ DỤNG CỔNG TRÊ (cổ bản\nphục cấp)| NHẠT PHỦC TẠP
+    
+    E --> F
+```
+
 Lộ Trình về Cung Cấp Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Chất Lượng Cao WSO là một nguồn lực thực hiện đi kèm với Hướng Dẫn và Kế Hoạch Hành Động về các Dịch Vụ Chăm Sóc Bệnh Nhân Đột Quỵ Toàn Cầu WSO .  Lộ trình này cung cấp khung làm việc cho việc thực hiện, theo dõi và đánh giá các dịch vụ chăm sóc bệnh nhân đột quỵ toàn cầu.
 
 Lộ trình cung cấp sự chuẩn hóa và tính nhất quán cho việc lựa chọn các khuyến nghị dựa trên bằng chứng, phương pháp thực hiện trong thực hành lâm sàng, và việc tính toán các biện pháp thực hiện để tạo nên một môi trường cải thiện chất lượng không ngừng.
