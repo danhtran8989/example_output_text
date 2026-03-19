@@ -78,7 +78,9 @@ Hướng dẫn lộ trình này cung cấp khung làm việc cho việc thực h
 Hình 1. Các cấp độ năng lực cung cấp dịch vụ chăm sóc sức khỏe cho công tác chăm sóc bệnh nhân đột quỵ
 
 ```mermaid
---- title: Diagram Title ---
+---
+title: Pyramid Diagram
+---
 graph TD
     A["DỊCH VỤ CHĂM SÓC SỨC KHỎE<br>TỐI THIỂU"] --> B["CÁC DỊCH VỤ CHĂM SÓC<br>BỆNH NHÂN ĐỘT QUY<br>CẤP THIẾT"] --> C["CÁC DỊCH VỤ CHĂM<br>SÓC BỆNH NHÂN ĐỘT QUY<br>NÂNG CAO"]
     style A fill:#f08080,stroke:#333,stroke-width:2px
